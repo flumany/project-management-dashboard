@@ -5,21 +5,21 @@ import { Button } from '@/components/ui/button';
 
 const DashboardHeader = () => {
   return (
-    <header className="bg-white border-b border-gray-200 px-6 py-4">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-          <p className="text-gray-600">Welcome back, here's what's happening with your projects</p>
+    <header className="bg-white border-b border-gray-200 px-4 lg:px-6 py-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="ml-12 lg:ml-0">
+          <h1 className="text-xl lg:text-2xl font-bold text-gray-900">ダッシュボード</h1>
+          <p className="text-sm lg:text-base text-gray-600">お帰りなさい。プロジェクトの状況をご確認ください</p>
         </div>
         
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2 lg:space-x-4">
           {/* Search */}
-          <div className="relative">
+          <div className="relative flex-1 sm:flex-none">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
             <input
               type="text"
-              placeholder="Search projects..."
-              className="pl-10 pr-4 py-2 w-80 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
+              placeholder="プロジェクトを検索..."
+              className="pl-10 pr-4 py-2 w-full sm:w-60 lg:w-80 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-sm"
             />
           </div>
           
@@ -32,9 +32,10 @@ const DashboardHeader = () => {
           </button>
           
           {/* New Project Button */}
-          <Button className="bg-brand-500 hover:bg-brand-600 text-white">
-            <Plus className="h-4 w-4 mr-2" />
-            New Project
+          <Button className="bg-brand-500 hover:bg-brand-600 text-white text-sm px-3 lg:px-4">
+            <Plus className="h-4 w-4 mr-1 lg:mr-2" />
+            <span className="hidden sm:inline">新規プロジェクト</span>
+            <span className="sm:hidden">新規</span>
           </Button>
         </div>
       </div>
